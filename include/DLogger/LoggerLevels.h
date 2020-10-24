@@ -15,12 +15,6 @@ enum class LoggerLevel
 	INFO = 1,		/**< The INFO level */
 	WARNING = 2,	/**< The WARNING level */
 	ERROR = 3		/**< The ERROR level */
-	
-	/**
-	*	@brief Cast the Level to an integer
-	*	@return The level casted to an integer
-	*/
-	operator int32_t() const;
 };
 
 #endif

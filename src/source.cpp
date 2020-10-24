@@ -7,5 +7,6 @@ int main()
 	LOGGER::setFileLogging(true, "Log.txt");
 	LOGGER::setConsoleLogging(true);
 	LOGGER::start();
+	LOGGER::end();
 	return 0;
 }

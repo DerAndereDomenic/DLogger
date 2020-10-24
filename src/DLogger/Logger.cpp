@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <sstream>
 #include <fstream>
+#include <DLogger/Platform.h>
 
 #ifdef __DLOGGER_WINDOWS
 #include <windows.h>
@@ -29,6 +30,10 @@ namespace __dlogger_Detail
 		"[  Error  ] "
 	};
 	uint32_t status[4] = {0,0,0,0};											/**< The number of messages logged */
+	
+#ifdef __DLOGGER_WINDOWS
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);						/**< The handle to the console */
+#endif
 	
 	/**
 	*	@brief Displays a Logger header

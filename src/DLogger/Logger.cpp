@@ -73,6 +73,30 @@ LOGGER::setMinFileLevel(const LoggerLevel& level)
 }
 
 void 
+LOGGER::DEBUG(const std::string& log)
+{
+	__dlogger_Detail::writeLogLevel(LoggerLevel::DEBUG, log);
+}
+
+void 
+LOGGER::INFO(const std::string& log)
+{
+	__dlogger_Detail::writeLogLevel(LoggerLevel::INFO, log);
+}
+
+void 
+LOGGER::WARNING(const std::string& log)
+{
+	__dlogger_Detail::writeLogLevel(LoggerLevel::WARNING, log);
+}
+	
+void 
+LOGGER::ERROR(const std::string& log)
+{
+	__dlogger_Detail::writeLogLevel(LoggerLevel::ERROR, log);
+}
+
+void 
 __dlogger_Detail::loggerHeader()
 {
 	uint32_t white_space = 80;

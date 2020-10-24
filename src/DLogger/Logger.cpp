@@ -5,6 +5,8 @@ namespace __dlogger_Detail
 {
 	std::string project_name;
 	std::string version;
+	
+	void loggerHeader();
 }
 
 void 
@@ -38,4 +40,12 @@ void
 LOGGER::end()
 {
 	
+}
+
+void 
+__dlogger_Detail::loggerHeader()
+{
+	std::cout << "##########################################################################" << std::endl;
+	std::cout << project_name << " " << version << std::endl;
+	std::cout << "##########################################################################" << std::endl;
 }

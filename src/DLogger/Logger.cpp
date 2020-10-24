@@ -8,6 +8,9 @@ namespace __dlogger_Detail
 	std::string project_name;
 	std::string version;
 	
+	bool should_file_log = false;
+	bool should_console_log = false;
+	
 	void loggerHeader();
 	
 	void writeLog(const std::string& log);

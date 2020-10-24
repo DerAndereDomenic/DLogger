@@ -1,8 +1,10 @@
 #include <DLogger/Logger.h>
+#inclued <iostream>
 
 namespace __dlogger_Detail
 {
-	
+	std::string project_name;
+	std::string version;
 }
 
 void 

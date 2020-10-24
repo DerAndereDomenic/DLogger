@@ -15,6 +15,14 @@
 #define __PINK 13
 #define __YELLOW 14
 
+#else 
+
+#define __WHITE "\033[0m"
+#define __RED "\033[31m"
+#define __GREEN "\033[32m"
+#define __PINK "\033[35m"
+#define __YELLOW "\033[33m"
+
 #endif
 
 namespace __dlogger_Detail

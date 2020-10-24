@@ -56,6 +56,18 @@ LOGGER::end()
 }
 
 void 
+LOGGER::setMinConsoleLevel(const LoggerLevel& level)
+{
+	__dlogger_Detail::minConsoleLevel = level;
+}
+
+void 
+LOGGER::setMinFileLevel(const LoggerLevel& level)
+{
+	__dlogger_Detail::minFileLevel = level;
+}
+
+void 
 __dlogger_Detail::loggerHeader()
 {
 	uint32_t white_space = 80;

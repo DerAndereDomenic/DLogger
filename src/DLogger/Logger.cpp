@@ -6,31 +6,46 @@
 
 namespace __dlogger_Detail
 {
-	std::string project_name;
-	std::string version;
+	std::string project_name;												/**< The name of the project to log */
+	std::string version;													/**< The version of the project to log */
 	
-	bool initialized = false;
-	bool should_file_log = false;
-	bool should_console_log = true;
-	LoggerLevel minConsoleLevel = LoggerLevel::DEBUG;
-	LoggerLevel minFileLevel = LoggerLevel::DEBUG;
+	bool initialized = false;												/**< If the Logger was initialized */
+	bool should_file_log = false;											/**< If the logger should log to the console */
+	bool should_console_log = true;											/**< If the logger should log to the log file */
+	LoggerLevel minConsoleLevel = LoggerLevel::DEBUG;						/**< The minimum log level for the console */
+	LoggerLevel minFileLevel = LoggerLevel::DEBUG;							/**< The minimum log level for the log file */
 	
-	std::fstream out_file;
-	std::string prefix[4] =
+	std::fstream out_file;													/**< The log file */
+	std::string prefix[4] =													/**< The prefixes for the logger messages */
 	{
 		"[  Debug  ] ",
 		"[  Info   ] ",
 		"[ Warning ] ",
 		"[  Error  ] "
 	};
-	uint32_t status[4] = {0,0,0,0};
+	uint32_t status[4] = {0,0,0,0};											/**< The number of messages logged */
 	
+	/**
+	*	@brief Displays a Logger header
+	*/
 	void loggerHeader();
 	
+	/**
+	*	@brief Displays a Logger footer
+	*/
 	void loggerFooter();
 	
+	/**
+	*	@brief Writes a log message.
+	*	@param log The log message
+	*/
 	void writeLog(const std::string& log);
 	
+	/**
+	*	@brief Writes a leveled log message .
+	*	@param level The priority level of the message
+	*	@param log The log message
+	*/
 	void writeLogLevel(const LoggerLevel& level, const std::string& log);
 }
 

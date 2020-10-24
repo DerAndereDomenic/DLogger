@@ -3,7 +3,7 @@
 
 namespace LOGGER
 {
-	
+	void start();
 }
 
 #endif

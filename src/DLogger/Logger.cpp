@@ -213,7 +213,9 @@ __dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log
 	if(should_console_log && level >= minConsoleLevel)
 	{
 #ifdef __DLOGGER_WINDOWS
+		SetConsoleTextAttribute(hConsole, colors[static_cast<int32_t>(level)]);
 		std::cout << prefix[static_cast<int32_t>(level)];
+		SetConsoleTextAttribute(hConsole, __WHITE);
 		std::cout << log;
 #else
 		std::cout << prefix[static_cast<int32_t>(level)];

@@ -16,6 +16,13 @@ namespace __dlogger_Detail
 	LoggerLevel minFileLevel = LoggerLevel::DEBUG;
 	
 	std::fstream out_file;
+	std::string prefix[4] =
+	{
+		"[  Debug  ] ",
+		"[  Info   ] ",
+		"[ Warning ] ",
+		"[  Error  ] "
+	};
 	
 	void loggerHeader();
 	

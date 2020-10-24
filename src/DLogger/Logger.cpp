@@ -22,7 +22,7 @@ namespace __dlogger_Detail
 	LoggerLevel minFileLevel = LoggerLevel::DEBUG;							/**< The minimum log level for the log file */
 	
 	std::fstream out_file;													/**< The log file */
-	std::string prefix[4] =													/**< The prefixes for the logger messages */
+	const std::string prefix[4] =											/**< The prefixes for the logger messages */
 	{
 		"[  Debug  ] ",
 		"[  Info   ] ",

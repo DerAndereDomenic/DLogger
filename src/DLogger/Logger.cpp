@@ -11,6 +11,8 @@ namespace __dlogger_Detail
 	
 	bool should_file_log = false;
 	bool should_console_log = true;
+	LoggerLevel minConsoleLevel = LoggerLevel::DEBUG;
+	LoggerLevel minFileLevel = LoggerLevel::DEBUG;
 	
 	std::fstream out_file;
 	

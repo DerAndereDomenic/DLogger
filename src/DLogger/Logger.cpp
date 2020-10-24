@@ -49,8 +49,8 @@ LOGGER::setConsoleLogging(const bool& should_console_log)
 void 
 LOGGER::start()
 {
-	__dlogger_Detail::loggerHeader();
 	__dlogger_Detail::initialized = true;
+	__dlogger_Detail::loggerHeader();
 }
 	
 void 

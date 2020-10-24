@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdint>
 #include <sstream>
+#include <fstream>
 
 namespace __dlogger_Detail
 {
@@ -10,6 +11,8 @@ namespace __dlogger_Detail
 	
 	bool should_file_log = false;
 	bool should_console_log = false;
+	
+	std::fstream out_file;
 	
 	void loggerHeader();
 	
@@ -28,13 +31,14 @@ void
 LOGGER::setFileLogging(const bool& should_file_log,
 					   const std::string& path)
 {
-	
+	__dlogger_Detail::should_file_log = should_file_log;
+	__dlogger_Detail::out_file = std::fstream(path, std::ios::out);
 }
 						
 void 
 LOGGER::setConsoleLogging(const bool& should_console_log)
 {
-	
+	__dlogger_Detail::should_console_log = should_console_log;
 }
 	
 void 

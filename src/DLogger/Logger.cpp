@@ -228,7 +228,7 @@ __dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log
 		SetConsoleTextAttribute(hConsole, __WHITE);
 		std::cout << log;
 #else
-		std::cout << prefix[static_cast<int32_t>(level)];
+		std::cout << colors[static_cast<int32_t>(level)] << prefix[static_cast<int32_t>(level)] << __WHITE;
 		std::cout << log;
 #endif
 	}

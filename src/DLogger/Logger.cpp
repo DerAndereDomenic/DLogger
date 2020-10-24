@@ -41,6 +41,8 @@ namespace __dlogger_Detail
 #ifdef __DLOGGER_WINDOWS
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);						/**< The handle to the console */
 	const uint8_t colors[4] = {__PINK, __GREEN, __YELLOW, __RED};			/**< The console color array */
+#else 
+	const std::string colors[4] = {__PINK, __GREEN, __YELLOW, __RED};		/**< The console color array */
 #endif
 	
 	/**

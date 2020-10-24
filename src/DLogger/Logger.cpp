@@ -10,7 +10,7 @@ namespace __dlogger_Detail
 	std::string version;
 	
 	bool should_file_log = false;
-	bool should_console_log = false;
+	bool should_console_log = true;
 	
 	std::fstream out_file;
 	

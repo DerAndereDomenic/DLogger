@@ -23,6 +23,7 @@ namespace __dlogger_Detail
 		"[ Warning ] ",
 		"[  Error  ] "
 	};
+	uint32_t status[4] = {0,0,0,0};
 	
 	void loggerHeader();
 	

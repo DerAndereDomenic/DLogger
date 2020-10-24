@@ -67,6 +67,7 @@ void
 LOGGER::end()
 {
 	__dlogger_Detail::out_file.close();
+	__dlogger_Detail::loggerFooter();
 	__dlogger_Detail::initialized = false;
 }
 

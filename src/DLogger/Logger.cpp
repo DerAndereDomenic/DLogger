@@ -132,6 +132,7 @@ void
 __dlogger_Detail::loggerFooter()
 {
 	uint32_t white_space = 80;
+	uint32_t rem_white_space;
 	
 	std::stringstream ss;
 	
@@ -139,11 +140,15 @@ __dlogger_Detail::loggerFooter()
 	writeLog(ss.str());
 	
 	ss.str(std::string());
-	ss << "#" << " Warnings: " << status[2] << std::endl;
+	ss << "#" << " Warnings: " << status[2];
+	rem_white_space = white_space - ss.str().size() + 1;
+	ss << std::string(rem_white_space, ' ') << "#" << std::endl;
 	writeLog(ss.str());
 	
 	ss.str(std::string());
-	ss << "#" << " Errors: " << status[3] << std::endl;
+	ss << "#" << " Errors: " << status[3];
+	rem_white_space = white_space - ss.str().size() + 1;
+	ss << std::string(rem_white_space, ' ') << "#" << std::endl;
 	writeLog(ss.str());
 	
 	ss.str(std::string());

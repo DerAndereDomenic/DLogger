@@ -19,6 +19,8 @@ namespace __dlogger_Detail
 	void loggerHeader();
 	
 	void writeLog(const std::string& log);
+	
+	void writeLogLevel(const LoggerLevel& level, const std::string& log);
 }
 
 void 
@@ -97,6 +99,20 @@ __dlogger_Detail::writeLog(const std::string& log)
 	}
 	
 	if(should_file_log)
+	{
+		out_file << log;
+	}
+}
+
+void 
+__dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log)
+{
+	if(should_console_log && level >= minConsoleLevel)
+	{
+		std::cout << log;
+	}
+	
+	if(should_file_log && level >= minFileLevel)
 	{
 		out_file << log;
 	}

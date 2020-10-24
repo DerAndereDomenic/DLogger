@@ -204,8 +204,13 @@ __dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log
 	
 	if(should_console_log && level >= minConsoleLevel)
 	{
+#ifdef __DLOGGER_WINDOWS
 		std::cout << prefix[static_cast<int32_t>(level)];
 		std::cout << log;
+#else
+		std::cout << prefix[static_cast<int32_t>(level)];
+		std::cout << log;
+#endif
 	}
 	
 	if(should_file_log && level >= minFileLevel)

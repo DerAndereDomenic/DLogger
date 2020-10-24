@@ -32,7 +32,7 @@ LOGGER::setFileLogging(const bool& should_file_log,
 }
 						
 void 
-LOGGER::setConsoleLoggint(const bool& should_console_log)
+LOGGER::setConsoleLogging(const bool& should_console_log)
 {
 	
 }

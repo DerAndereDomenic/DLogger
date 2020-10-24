@@ -11,7 +11,7 @@ namespace LOGGER
 	void setFileLogging(const bool& should_file_log,
 						const std::string& path);
 						
-	void setConsoleLoggint(const bool& should_console_log);
+	void setConsoleLogging(const bool& should_console_log);
 	
 	void start();
 	

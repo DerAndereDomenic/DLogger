@@ -1,5 +1,10 @@
 #include <DLogger/Logger.h>
 
+namespace __dlogger_Detail
+{
+	
+}
+
 void 
 LOGGER::setProject(const std::string& name,
 				   const std::string& version)

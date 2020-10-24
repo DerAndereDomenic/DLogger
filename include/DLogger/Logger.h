@@ -72,6 +72,30 @@ namespace LOGGER
 	*	@param level The minimum logging level for the log file
 	*/
 	void setMinFileLevel(const LoggerLevel& level = LoggerLevel::DEBUG);
+	
+	/**
+	*	@brief Logs a debug message.
+	*	@param log The message to log.
+	*/
+	void DEBUG(const std::string& log);
+	
+	/**
+	*	@brief Logs an info message.
+	*	@param log The message to log.
+	*/
+	void INFO(const std::string& log);
+	
+	/**
+	*	@param Logs a warning message.
+	*	@param log The message to log.
+	*/
+	void WARNING(const std::string& log);
+	
+	/**
+	*	@param Logs an error message.
+	*	@param The message to log.
+	*/
+	void ERROR(const std::string& log);
 }
 
 #endif

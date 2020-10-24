@@ -2,6 +2,7 @@
 #define __DLOGGER_LOGGER_H
 
 #include <string>
+#include <DLogger/LoggerLevels.h>
 
 /**
 *	@brief This namespace capsules all Logger functions
@@ -57,6 +58,20 @@ namespace LOGGER
 	*	should_file_log=true
 	*/
 	void end();
+	
+	/**
+	*	@brief Sets the minimum priority needed for a message to be logged to the console.
+	*	Default is priority DEBUG = 0
+	*	@param level The minimum logging level for the console 
+	*/
+	void setMinConsoleLevel(const LoggerLevel& level = LoggerLevel::DEBUG);
+	
+	/**
+	*	@brief Sets the minimum priority needed for a message to be logged to the log file.
+	*	Default is priority DEBUG = 0
+	*	@param level The minimum logging level for the log file
+	*/
+	void setMinFileLevel(const LoggerLevel& level = LoggerLevel::DEBUG);
 }
 
 #endif

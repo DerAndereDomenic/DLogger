@@ -155,4 +155,6 @@ __dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log
 	{
 		out_file << prefix[static_cast<int32_t>(level)] << log;
 	}
+	
+	++status[static_cast<int32_t>(level)];
 }

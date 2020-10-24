@@ -18,10 +18,10 @@
 #else 
 
 #define __WHITE "\033[0m"
-#define __RED "\033[31m"
-#define __GREEN "\033[32m"
-#define __PINK "\033[35m"
-#define __YELLOW "\033[33m"
+#define __RED "\033[1;31m"
+#define __GREEN "\033[1;32m"
+#define __PINK "\033[1;35m"
+#define __YELLOW "\033[1;33m"
 
 #endif
 

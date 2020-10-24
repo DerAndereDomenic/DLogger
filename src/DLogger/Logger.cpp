@@ -1,5 +1,6 @@
 #include <DLogger/Logger.h>
 #include <iostream>
+#include <cstdint>
 
 namespace __dlogger_Detail
 {
@@ -45,7 +46,11 @@ LOGGER::end()
 void 
 __dlogger_Detail::loggerHeader()
 {
-	std::cout << "##########################################################################" << std::endl;
-	std::cout << project_name << " " << version << std::endl;
-	std::cout << "##########################################################################" << std::endl;
+	uint32_t white_space = 80;
+	uint32_t name_ver_size = project_name.size() + version.size() + 1;
+	uint32_t rem_white_space = (white_space - name_ver_size)/2;
+	
+	std::cout << "#" << std::string(white_space, '-') << "#" << std::endl;
+	std::cout << "#" << std::string(rem_white_space, ' ') << project_name << " " << version << std::string(rem_white_space, ' ') << "#" <<std::endl;
+	std::cout << "#" << std::string(white_space, '-') << "#" << std::endl;
 }

@@ -11,7 +11,8 @@ void
 LOGGER::setProject(const std::string& name,
 				   const std::string& version)
 {
-	
+	__dlogger_Detail::project_name = name;
+	__dlogger_Detail::version = version;
 }
 					
 void 

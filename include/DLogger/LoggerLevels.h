@@ -1,6 +1,8 @@
 #ifndef __DLOGGER_LOGGERLEVELS_H
 #define __DLOGGER_LOGGERLEVELS_H
 
+#include <cstdint>
+
 /**
 *	@brief Defines the levels of the logger.
 *	Each message has a level according to its importance.
@@ -13,6 +15,12 @@ enum class LoggerLevel
 	INFO = 1,		/**< The INFO level */
 	WARNING = 2,	/**< The WARNING level */
 	ERROR = 3		/**< The ERROR level */
+	
+	/**
+	*	@brief Cast the Level to an integer
+	*	@return The level casted to an integer
+	*/
+	operator int32_t() const;
 };
 
 #endif

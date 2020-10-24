@@ -13,6 +13,6 @@ enum class LoggerLevel
 	INFO = 1,		/**< The INFO level */
 	WARNING = 2,	/**< The WARNING level */
 	ERROR = 3		/**< The ERROR level */
-}
+};
 
 #endif

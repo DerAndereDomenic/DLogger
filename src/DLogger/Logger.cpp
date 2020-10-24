@@ -1,6 +1,7 @@
 #include <DLogger/Logger.h>
 #include <iostream>
 #include <cstdint>
+#include <sstream>
 
 namespace __dlogger_Detail
 {
@@ -52,13 +53,22 @@ __dlogger_Detail::loggerHeader()
 	uint32_t name_ver_size = project_name.size() + version.size() + 1;
 	uint32_t rem_white_space = (white_space - name_ver_size)/2;
 	
-	std::cout << "#" << std::string(white_space, '-') << "#" << std::endl;
-	std::cout << "#" << std::string(rem_white_space, ' ') << project_name << " " << version << std::string(rem_white_space, ' ') << "#" <<std::endl;
-	std::cout << "#" << std::string(white_space, '-') << "#" << std::endl;
+	std::stringstream ss;
+	
+	ss << "#" << std::string(white_space, '-') << "#" << std::endl;
+	writeLog(ss.str());
+	
+	ss.str(std::string());
+	ss << "#" << std::string(rem_white_space, ' ') << project_name << " " << version << std::string(rem_white_space, ' ') << "#" <<std::endl;
+	writeLog(ss.str());
+	
+	ss.str(std::string());
+	ss << "#" << std::string(white_space, '-') << "#" << std::endl;
+	writeLog(ss.str());
 }
 
 void 
 __dlogger_Detail::writeLog(const std::string& log)
 {
-	std::cout << log << std::endl;
+	std::cout << log;
 }

@@ -27,6 +27,8 @@ namespace __dlogger_Detail
 	
 	void loggerHeader();
 	
+	void loggerFooter();
+	
 	void writeLog(const std::string& log);
 	
 	void writeLogLevel(const LoggerLevel& level, const std::string& log);
@@ -118,6 +120,29 @@ __dlogger_Detail::loggerHeader()
 	
 	ss.str(std::string());
 	ss << "#" << std::string(rem_white_space, ' ') << project_name << " " << version << std::string(rem_white_space, ' ') << "#" <<std::endl;
+	writeLog(ss.str());
+	
+	ss.str(std::string());
+	ss << "#" << std::string(white_space, '-') << "#" << std::endl;
+	writeLog(ss.str());
+}
+
+void
+__dlogger_Detail::loggerFooter()
+{
+	uint32_t white_space = 80;
+	
+	std::stringstream ss;
+	
+	ss << "#" << std::string(white_space, '-') << "#" << std::endl;
+	writeLog(ss.str());
+	
+	ss.str(std::string());
+	ss << "#" << " Warnings: " << status[2] << std::endl;
+	writeLog(ss.str());
+	
+	ss.str(std::string());
+	ss << "#" << " Errors: " << status[3] << std::endl;
 	writeLog(ss.str());
 	
 	ss.str(std::string());

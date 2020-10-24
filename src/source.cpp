@@ -3,6 +3,7 @@
 
 int main()
 {
+	LOGGER::setProject("DLogger Test", "1.0");
 	LOGGER::start();
 	return 0;
 }

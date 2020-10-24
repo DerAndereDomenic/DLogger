@@ -1,5 +1,5 @@
 #include <DLogger/Logger.h>
-#inclued <iostream>
+#include <iostream>
 
 namespace __dlogger_Detail
 {
@@ -33,7 +33,7 @@ LOGGER::setConsoleLoggint(const bool& should_console_log)
 void 
 LOGGER::start()
 {
-	
+	__dlogger_Detail::loggerHeader();
 }
 	
 void 

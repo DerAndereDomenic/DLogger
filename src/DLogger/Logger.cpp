@@ -4,6 +4,11 @@
 #include <sstream>
 #include <fstream>
 
+#ifdef __DLOGGER_WINDOWS
+#include <windows.h>
+#undef ERROR 
+#endif
+
 namespace __dlogger_Detail
 {
 	std::string project_name;												/**< The name of the project to log */

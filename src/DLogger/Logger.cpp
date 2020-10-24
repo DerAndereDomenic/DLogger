@@ -8,6 +8,13 @@
 #ifdef __DLOGGER_WINDOWS
 #include <windows.h>
 #undef ERROR 
+
+#define __WHITE 15
+#define __RED 12
+#define __GREEN 10
+#define __PINK 13
+#define __YELLOW 14
+
 #endif
 
 namespace __dlogger_Detail

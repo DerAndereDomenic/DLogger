@@ -9,6 +9,7 @@ namespace __dlogger_Detail
 	std::string project_name;
 	std::string version;
 	
+	bool initialized = false;
 	bool should_file_log = false;
 	bool should_console_log = true;
 	LoggerLevel minConsoleLevel = LoggerLevel::DEBUG;
@@ -49,12 +50,14 @@ void
 LOGGER::start()
 {
 	__dlogger_Detail::loggerHeader();
+	__dlogger_Detail::initialized = true;
 }
 	
 void 
 LOGGER::end()
 {
 	__dlogger_Detail::out_file.close();
+	__dlogger_Detail::initialized = false;
 }
 
 void 
@@ -93,6 +96,8 @@ __dlogger_Detail::loggerHeader()
 void 
 __dlogger_Detail::writeLog(const std::string& log)
 {
+	if(!initialized) return;
+	
 	if(should_console_log)
 	{
 		std::cout << log;
@@ -107,6 +112,8 @@ __dlogger_Detail::writeLog(const std::string& log)
 void 
 __dlogger_Detail::writeLogLevel(const LoggerLevel& level, const std::string& log)
 {
+	if(!initialized) return;
+	
 	if(should_console_log && level >= minConsoleLevel)
 	{
 		std::cout << log;

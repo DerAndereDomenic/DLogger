@@ -77,5 +77,13 @@ __dlogger_Detail::loggerHeader()
 void 
 __dlogger_Detail::writeLog(const std::string& log)
 {
-	std::cout << log;
+	if(should_console_log)
+	{
+		std::cout << log;
+	}
+	
+	if(should_file_log)
+	{
+		out_file << log;
+	}
 }
